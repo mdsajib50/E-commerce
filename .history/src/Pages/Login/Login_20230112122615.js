@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {login} = useContext(AuthContext)
     const handelLogin = e =>{
         e.preventDefault()
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        
+ 
         login(email, password)
         .then((result) => {
             const user =result.user
+        
+            
             console.log(user)
         })
         .catch((error) => {
@@ -23,7 +23,7 @@ const Login = () => {
         <div className="w-full mt-12">
             
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl py-14 mx-auto">
-                    <form onSubmit={handelLogin} className="card-body">
+                    <form className="card-body">
                         <h1 className="text-5xl font-bold text-center">Login</h1>
                         <div className="form-control">
                         <label className="label">

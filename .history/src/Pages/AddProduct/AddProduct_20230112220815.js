@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Product successfully added');
+const notify = () => toast();
 
 const AddProduct = () => {
    const {user} = useContext(AuthContext)
@@ -46,7 +46,7 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data => {
-            notify()
+            notify('Product successfully added')
             form.reset()
             console.log(data)})
         .catch(err => console.error(err))

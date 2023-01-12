@@ -19,7 +19,7 @@ const Login = () => {
         .then((result) => {
             const user =result.user
             saveUser(name, email, role)
-            notify()
+            notify
             form.reset()
             console.log(user)
         })
@@ -92,7 +92,6 @@ const Login = () => {
                     <p className='text-center'>Create A New Account<Link className='font-bold text-orange-600' to='/signup'>Sign up</Link></p>
                    
                 </div>
-                <Toaster/>
             </div>
     );
 };

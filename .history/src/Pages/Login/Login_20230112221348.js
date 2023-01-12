@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Login successfully');
+const notify = () => toast('Product successfully added');
 const Login = () => {
     const {login, user} = useContext(AuthContext)
     console.log(user)
@@ -19,7 +19,7 @@ const Login = () => {
         .then((result) => {
             const user =result.user
             saveUser(name, email, role)
-            notify()
+            alert('login success')
             form.reset()
             console.log(user)
         })
@@ -92,7 +92,6 @@ const Login = () => {
                     <p className='text-center'>Create A New Account<Link className='font-bold text-orange-600' to='/signup'>Sign up</Link></p>
                    
                 </div>
-                <Toaster/>
             </div>
     );
 };

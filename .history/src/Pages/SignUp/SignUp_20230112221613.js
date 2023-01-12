@@ -18,7 +18,7 @@ const SignUp = () => {
             const user = result.user
             user.displayName = name
             console.log(user)
-            notify()
+            notify
            navigate('/home')
         })
         .catch((err) => {
@@ -55,7 +55,6 @@ const SignUp = () => {
                     </form>
                     <p className='text-center'> Already have an account? <Link className='font-bold text-orange-600' to='/login'>Login</Link></p>
                 </div>
-                <Toaster/>
             </div>
     );
 };

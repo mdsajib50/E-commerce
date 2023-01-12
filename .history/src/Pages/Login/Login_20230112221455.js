@@ -92,7 +92,7 @@ const Login = () => {
                     <p className='text-center'>Create A New Account<Link className='font-bold text-orange-600' to='/signup'>Sign up</Link></p>
                    
                 </div>
-                <Toaster/>
+                <T
             </div>
     );
 };

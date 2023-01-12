@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Sign Up successfully');
+const notify = () => toast('Sign Up successfully added');
 const SignUp = () => {
     const {createUser} = useContext(AuthContext)
     const navigate = useNavigate()
@@ -18,7 +18,7 @@ const SignUp = () => {
             const user = result.user
             user.displayName = name
             console.log(user)
-            notify()
+            alert('sign up success')
            navigate('/home')
         })
         .catch((err) => {
@@ -55,7 +55,6 @@ const SignUp = () => {
                     </form>
                     <p className='text-center'> Already have an account? <Link className='font-bold text-orange-600' to='/login'>Login</Link></p>
                 </div>
-                <Toaster/>
             </div>
     );
 };

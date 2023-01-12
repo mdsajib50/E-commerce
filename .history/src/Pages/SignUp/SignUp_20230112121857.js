@@ -15,7 +15,7 @@ const SignUp = () => {
         .then((result) => {
             const user = result.user
             console.log(user)
-            alert('sign up success')
+            alert('sign')
            navigate('/home')
         })
         .catch((err) => {

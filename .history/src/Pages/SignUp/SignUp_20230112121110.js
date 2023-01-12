@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext)
-    const navigate = useNavigate()
+    const {createUser} = useContext(A)
     const handelSignUp = e =>{
         e.preventDefault()
         const form = e.target;
@@ -14,8 +12,6 @@ const SignUp = () => {
         createUser(email, password)
         .then((result) => {
             const user = result.user
-            console.log(user)
-            alert('sign up success')
            navigate('/home')
         })
         .catch((err) => {
@@ -26,7 +22,7 @@ const SignUp = () => {
         <div className="w-full mt-12">
            
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl py-14 mx-auto">
-                    <form onSubmit={handelSignUp} className="card-body">
+                    <form className="card-body">
                         <h1 className="text-5xl font-bold text-center">Sign Up</h1>
                         <div className="form-control">
                         <label className="label">

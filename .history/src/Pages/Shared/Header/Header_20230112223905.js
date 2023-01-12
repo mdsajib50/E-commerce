@@ -4,13 +4,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContext)
-    const handelSignOut = () =>{
-        logOut()
-        .then()
-        .catch(err => {
-          console.error(err);
-        })
-      }
+    
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -28,9 +22,8 @@ const Header = () => {
                     user?.email ?
 
                 <>
-                    <li><Link to='/add-product'>Add A Product</Link></li>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
-                    <li><button className='btn btn-accent' onClick={handelSignOut}>Log Out</button></li>
+                    <li><Link to='/add-product'>Add A Product</Link></li>
                 </>
                 :
                 <>
@@ -53,7 +46,6 @@ const Header = () => {
                 <>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
                     <li><Link to='/add-product'>Add A Product</Link></li>
-                    <li><button className='btn btn-accent' onClick={handelSignOut}>Log Out</button></li>
                 </>
                 :
                 <>

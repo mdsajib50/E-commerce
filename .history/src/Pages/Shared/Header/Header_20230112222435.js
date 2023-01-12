@@ -1,16 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const {user,logOut} = useContext(AuthContext)
-    const handelSignOut = () =>{
-        logOut()
-        .then()
-        .catch(err => {
-          console.error(err);
-        })
-      }
+    const {user} = useContext(Aut)
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -22,22 +14,10 @@ const Header = () => {
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/myorder'>My Order</Link></li>
                 <li><Link to='/blog'>Blog</Link></li>
-                
-                
-                {
-                    user?.email ?
-
-                <>
-                    <li><Link to='/add-product'>Add A Product</Link></li>
-                    <li><Link to='/dashboard'>Dashboard</Link></li>
-                    <li><button className='btn btn-accent' onClick={handelSignOut}>Log Out</button></li>
-                </>
-                :
-                <>
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/signup'>Sign Up</Link></li>
-                </>
-                }
+                <li><Link to='/add-product'>Add A Product</Link></li>
+                <li><Link to='/login'>Login</Link></li>
+                <li><Link to='/signup'>Sign Up</Link></li>
+                <li><Link to='/dashboard'>Dashboard</Link></li>
             </ul>
             </div>
             <a className="btn btn-ghost normal-case text-xl">Laptop Shop</a>
@@ -47,24 +27,14 @@ const Header = () => {
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/myorder'>My Order</Link></li>
                 <li><Link to='/blog'>Blog</Link></li>
-                {
-                    user?.email ?
-
-                <>
-                    <li><Link to='/dashboard'>Dashboard</Link></li>
-                    <li><Link to='/add-product'>Add A Product</Link></li>
-                    <li><button className='btn btn-accent' onClick={handelSignOut}>Log Out</button></li>
-                </>
-                :
-                <>
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/signup'>Sign Up</Link></li>
-                </>
-                }
+                <li><Link to='/add-product'>Add Product</Link></li>
+                <li><Link to='/login'>Login</Link></li>
+                <li><Link to='/signup'>Sign Up</Link></li>
+                <li><Link to='/dashboard'>Dashboard</Link></li>
             </ul>
         </div>
         <div className="navbar-end">
-    
+            <a className="btn">Get started</a>
         </div>
 </div>
     );

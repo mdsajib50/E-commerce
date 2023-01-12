@@ -30,7 +30,7 @@ const Header = () => {
                 <>
                     <li><Link to='/add-product'>Add A Product</Link></li>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
-                    <li><button className='btn btn-accent' onClick={handelSignOut}>Log Out</button></li>
+                    <li><Link to='/dashboard'>L</Link></li>
                 </>
                 :
                 <>
@@ -53,7 +53,6 @@ const Header = () => {
                 <>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
                     <li><Link to='/add-product'>Add A Product</Link></li>
-                    <li><button className='btn btn-accent' onClick={handelSignOut}>Log Out</button></li>
                 </>
                 :
                 <>

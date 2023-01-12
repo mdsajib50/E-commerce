@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import {getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import toast, { Toaster } from 'react-hot-toast';
 
 const notify = () => toast('Login successfully');
 const Login = () => {
-    const {login, user, auth} = useContext(AuthContext)
-    const provider = new GoogleAuthProvider()
-   
+    const {login, user} = useContext(AuthContext)
+    console.log(user)
     const navigate = useNavigate()
     const handelLogin = e =>{
         e.preventDefault()
@@ -41,15 +39,31 @@ const Login = () => {
             .then(res => res.json())
             .then(data =>{
                 navigate('/')
-                })
+                console.log('saveuser',data)})
             .catch(err => console.error(err))
      }
      const handelGoogleLogin =()=>{
         signInWithPopup(auth, provider)
         .then(result =>{
             const user = result.user;
+            const currentUser = {
+               email: user.email
+           }
+           //get jwt token
+           fetch('https://service-review-server-ebon.vercel.app/jwt',{
+               method:'POST',
+               headers:{
+                   'content-type': 'application/json'
+               },
+               body: JSON.stringify(currentUser)
+           })
+           .then(res => res.json())
+           .then(data =>{
+               localStorage.setItem('token',data.token)
+               
+           })
            console.log(user)
-            navigate('/');
+            navigate(from, { replace: true });
            })
         .catch((e) => {
             console.error(e)
@@ -101,7 +115,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center'>Log in with Google</p>
-                    <button onClick={handelGoogleLogin} className='btn font-bold text-green-400 w-32 mx-auto my-6'>Google</button>
+                    <button className='btn font-bold text-green-400 w-32 mx-auto my-6'>Google</button>
                     <p className='text-center'>Create A New Account<Link className='font-bold text-orange-600' to='/signup'>Sign up</Link></p>
                    
                 </div>

@@ -6,9 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const notify = () => toast('Login successfully');
 const Login = () => {
-    const {login, user, auth} = useContext(AuthContext)
+    const {login, user} = useContext(AuthContext)
     const provider = new GoogleAuthProvider()
-   
+    console.log(user)
     const navigate = useNavigate()
     const handelLogin = e =>{
         e.preventDefault()
@@ -101,7 +101,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center'>Log in with Google</p>
-                    <button onClick={handelGoogleLogin} className='btn font-bold text-green-400 w-32 mx-auto my-6'>Google</button>
+                    <button className='btn font-bold text-green-400 w-32 mx-auto my-6'>Google</button>
                     <p className='text-center'>Create A New Account<Link className='font-bold text-orange-600' to='/signup'>Sign up</Link></p>
                    
                 </div>

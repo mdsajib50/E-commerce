@@ -9,30 +9,15 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const role = form.role.value;
+        const role = form.role.
         login(email, password)
         .then((result) => {
             const user =result.user
-            saveUser(email, role)
-            alert('login success')
             console.log(user)
         })
         .catch((error) => {
             console.log(error);
         })
-     }
-     const saveUser=(email, role)=>{
-            const user ={email, role}
-            fetch('http://localhost:5001/user',{
-                method: 'POST',
-                headers:{
-                    'content-type': 'application/json'
-                },
-                body:JSON.stringify(user)
-            })
-            .then(res => res.json())
-            .then(data =>console.log('saveuser',data))
-            .catch(err => console.error(err))
      } 
     return (
         <div className="w-full mt-12">

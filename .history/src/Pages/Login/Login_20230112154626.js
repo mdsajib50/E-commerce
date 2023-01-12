@@ -13,8 +13,6 @@ const Login = () => {
         login(email, password)
         .then((result) => {
             const user =result.user
-            saveUser(email, role)
-            alert('login success')
             console.log(user)
         })
         .catch((error) => {
@@ -26,13 +24,9 @@ const Login = () => {
             fetch('http://localhost:5001/user',{
                 method: 'POST',
                 headers:{
-                    'content-type': 'application/json'
-                },
-                body:JSON.stringify(user)
+                    'content-type': 'application/'
+                }
             })
-            .then(res => res.json())
-            .then(data =>console.log('saveuser',data))
-            .catch(err => console.error(err))
      } 
     return (
         <div className="w-full mt-12">

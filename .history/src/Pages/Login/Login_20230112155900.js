@@ -14,7 +14,7 @@ const Login = () => {
         .then((result) => {
             const user =result.user
             saveUser(email, role)
-            alert('login success')
+            alert('login su')
             console.log(user)
         })
         .catch((error) => {

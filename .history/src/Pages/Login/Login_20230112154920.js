@@ -13,8 +13,6 @@ const Login = () => {
         login(email, password)
         .then((result) => {
             const user =result.user
-            saveUser(email, role)
-            alert('login success')
             console.log(user)
         })
         .catch((error) => {
@@ -31,8 +29,8 @@ const Login = () => {
                 body:JSON.stringify(user)
             })
             .then(res => res.json())
-            .then(data =>console.log('saveuser',data))
-            .catch(err => console.error(err))
+            .then(data =>console.log(data))
+            .c
      } 
     return (
         <div className="w-full mt-12">

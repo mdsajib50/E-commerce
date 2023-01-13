@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const AllUser = () => {
   const [users, setUsers] =useState()
 
-  fetch('http://localhost:5001/users')
+  fetch('https://e-commerce-server-virid.vercel.app/users')
   .then(res => res.json())
   .
     return (

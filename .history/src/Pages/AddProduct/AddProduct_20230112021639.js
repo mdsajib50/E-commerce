@@ -32,7 +32,7 @@ const AddProduct = () => {
                 condition
         }
 
-        fetch('http://localhost:5001/products',{
+        fetch('https://e-commerce-server-virid.vercel.app/products',{
             method: 'POST',
             headers:{
                 'content-type': 'applicatio'

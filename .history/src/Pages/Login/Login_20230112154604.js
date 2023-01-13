@@ -21,7 +21,7 @@ const Login = () => {
      }
      const saveUser=(email, role)=>{
             const user ={email, role}
-            fetch('http://localhost:5001/user',{
+            fetch('https://e-commerce-server-virid.vercel.app/user',{
                 method: 'POST',
                 headers:{
                     'content-type'

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Product = () => {
     const [products, setProducts] = useState()
-    fetch('http://localhost:5001/products')
+    fetch('https://e-commerce-server-virid.vercel.app/products')
     .then(res => res.json())
     .then(data =>console.log(data))
     return (

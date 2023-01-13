@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Product = () => {
-    fetch('http://localhost:5001/products')
+    fetch('https://e-commerce-server-virid.vercel.app/products')
     .then(res => )
     return (
         <div className="hero min-h-screen bg-base-200">

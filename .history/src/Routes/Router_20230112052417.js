@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             
             {
                 path:'/product-category/:id',
-                loader:({params})=> fetch(`http://localhost:5001/product-category/${params.id}`),
+                loader:({params})=> fetch(`https://e-commerce-server-virid.vercel.app/product-category/${params.id}`),
                 element:<ProductCategory></ProductCategory>
             }
         ]

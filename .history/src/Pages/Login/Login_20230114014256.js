@@ -75,7 +75,7 @@ const Login = () => {
             }
             jwtToken(currentUser)
             notify()
-            saveUser(user?.displayName, user?.email, 'buyer')
+            saveUser(user?.displayName, user?.email, 'buhyer')
            console.log(user)
 
             navigate('/');

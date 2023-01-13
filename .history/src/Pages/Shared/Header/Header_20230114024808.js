@@ -4,7 +4,8 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContext)
-    
+    const[admin, setAdmin] = useState([])
+    console.log('message', admin)
     const handelSignOut = () =>{
         logOut()
         .then()
@@ -12,6 +13,15 @@ const Header = () => {
           console.error(err);
         })
       }
+
+        fetch('http://localhost:5001/users')
+        .then(res => res.json())
+        .then(data => {
+        console.log(data)
+        const filterAdmin = data.filter((seller) => seller.role === 'seller');
+        setAdmin(filterAdmin)
+        })
+        .catch(err => console.error(err));
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -23,12 +33,15 @@ const Header = () => {
                 <li><Link to='/home'>Home</Link></li>
                 
                 <li><Link to='/blog'>Blog</Link></li>
-               
-                <li><Link to='/allsellers'>All Sellers</Link></li>
-               <li><Link to='/allbuyer'>All Buyers</Link></li>
-                   
-                <li><Link to='/myorder'>My Order</Link></li>
-                
+                {
+                    admin.length ===  ?
+                    <>
+                        <li><Link to='/allsellers'>All Sellers</Link></li>
+                        <li><Link to='/allbuyer'>All Buyers</Link></li>
+                    </>
+                    :
+                    <li><Link to='/myorder'>My Order</Link></li>
+                }
                 
                 {
                     user?.email ?
@@ -52,8 +65,6 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1">
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/myorder'>My Order</Link></li>
-                <li><Link to='/allseller'>All Sellers</Link></li>
-               <li><Link to='/allbuyer'>All Buyers</Link></li>
                 <li><Link to='/blog'>Blog</Link></li>
                 {
                     user?.email ?

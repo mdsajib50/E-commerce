@@ -10,7 +10,7 @@ const Login = () => {
     const provider = new GoogleAuthProvider()
    
     const navigate = useNavigate();
-    let currentUser ={}
+    let currentUser =
 
     const jwtToken= (currentUser) =>{
        
@@ -38,7 +38,7 @@ const Login = () => {
         login(email, password)
         .then((result) => {
             const user =result.user
-             currentUser = {
+            const currentUser = {
                 email: user.email
             }
             jwtToken(currentUser)
@@ -70,12 +70,9 @@ const Login = () => {
         signInWithPopup(auth, provider)
         .then(result =>{
             const user = result.user;
-            currentUser = {
-                email: user.email
-            }
             jwtToken(currentUser)
             notify()
-            saveUser(user?.displayName, user?.email, 'buyer')
+            saveUser(user?.displayName, email, role)
            console.log(user)
 
             navigate('/');

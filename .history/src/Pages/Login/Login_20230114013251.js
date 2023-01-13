@@ -70,12 +70,9 @@ const Login = () => {
         signInWithPopup(auth, provider)
         .then(result =>{
             const user = result.user;
-            currentUser = {
-                email: user.email
-            }
             jwtToken(currentUser)
             notify()
-            saveUser(user?.displayName, user?.email, 'buyer')
+            saveUser(user?.displayName, email, role)
            console.log(user)
 
             navigate('/');

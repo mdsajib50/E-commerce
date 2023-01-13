@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
@@ -12,6 +12,14 @@ const Header = () => {
           console.error(err);
         })
       }
+      fetch('http://localhost:5001/users')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      const filterSellers = data.filter((seller) => seller.role === 'seller');
+      setSellers(filterSellers)
+    })
+    .catch(err => console.error(err));
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -21,13 +29,8 @@ const Header = () => {
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 <li><Link to='/home'>Home</Link></li>
-                
-                <li><Link to='/blog'>Blog</Link></li>
-               
-                <li><Link to='/allsellers'>All Sellers</Link></li>
-               <li><Link to='/allbuyer'>All Buyers</Link></li>
-                   
                 <li><Link to='/myorder'>My Order</Link></li>
+                <li><Link to='/blog'>Blog</Link></li>
                 
                 
                 {
@@ -52,8 +55,6 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1">
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/myorder'>My Order</Link></li>
-                <li><Link to='/allseller'>All Sellers</Link></li>
-               <li><Link to='/allbuyer'>All Buyers</Link></li>
                 <li><Link to='/blog'>Blog</Link></li>
                 {
                     user?.email ?

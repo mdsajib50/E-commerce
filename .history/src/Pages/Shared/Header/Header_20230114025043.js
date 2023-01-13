@@ -52,8 +52,6 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1">
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/myorder'>My Order</Link></li>
-                <li><Link to='/allseller'>All Sellers</Link></li>
-               <li><Link to='/allbuyer'>All Buyers</Link></li>
                 <li><Link to='/blog'>Blog</Link></li>
                 {
                     user?.email ?

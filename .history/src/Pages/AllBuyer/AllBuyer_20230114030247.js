@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
-const AllSeller = () => {
-    const [sellers, setSellers] = useState([])
+const AllBuyer = () => {
+    const [buyers, setBuyers] = useState([])
     fetch('http://localhost:5001/users')
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      const filterSellers = data.filter((seller) => seller.role === 'seller');
-      setSellers(filterSellers)
+      const filterBuyer = data.filter((buyer) => buyer.role === 'buyer');
+      setBuyers(filterBuyer)
     })
     .catch(err => console.error(err));
   
       return (
           <div className="overflow-x-auto">
-              <h1 className='text-2xl font-semibold my-5'>All Sellers</h1>
+              <h1 className='text-2'>All Buyers</h1>
     <table className="table table-zebra w-full">
      
       <thead>
@@ -27,11 +27,11 @@ const AllSeller = () => {
       <tbody>
         
         {
-         sellers.map(seller =>{
-          return <tr key={seller._id}>
-          <td>{seller.name}</td>
-          <td>{seller.email}</td>
-          <td>{seller.role}</td>
+         buyers.map(buyer =>{
+          return <tr key={buyer._id}>
+          <td>{buyer.name}</td>
+          <td>{buyer.email}</td>
+          <td>{buyer.role}</td>
           <th><button>Delete</button></th>
         </tr>
         })}
@@ -41,4 +41,4 @@ const AllSeller = () => {
       );
   };
 
-export default AllSeller;
+export default AllBuyer;

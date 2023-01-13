@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const AllSeller = () => {
-    const [sellers, setSellers] = useState([])
+const AllBuyer = () => {
+    const [buyers, set]
     fetch('http://localhost:5001/users')
     .then(res => res.json())
     .then(data => {
@@ -13,7 +13,6 @@ const AllSeller = () => {
   
       return (
           <div className="overflow-x-auto">
-              <h1 className='text-2xl font-semibold my-5'>All Sellers</h1>
     <table className="table table-zebra w-full">
      
       <thead>
@@ -41,4 +40,4 @@ const AllSeller = () => {
       );
   };
 
-export default AllSeller;
+export default AllBuyer;

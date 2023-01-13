@@ -13,7 +13,7 @@ const AllSeller = () => {
   
       return (
           <div className="overflow-x-auto">
-              <h1 className='text-2xl font-semibold my-5'>All Sellers</h1>
+              
     <table className="table table-zebra w-full">
      
       <thead>

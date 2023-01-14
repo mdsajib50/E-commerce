@@ -3,7 +3,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main/Main';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import AllBuyer from '../Pages/AllBuyer/AllBuyer';
-import AllProduct from '../Pages/AllProduct/AllProduct';
 import AllSeller from '../Pages/AllSeller/AllSeller';
 import Blog from '../Pages/Blog/Blog';
 import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
@@ -60,8 +59,7 @@ const router = createBrowserRouter([
                 element:<AllBuyer></AllBuyer>
             },
             {
-                path:'/allproduct',
-                element: <AllProduct></AllProduct>
+                path:'/allproduct'
             }
         ]
     },

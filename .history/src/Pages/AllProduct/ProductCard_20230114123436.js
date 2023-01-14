@@ -1,0 +1,29 @@
+import React from 'react';
+
+const ProductCard = ({product}) => {
+    const {_id, img, seller_name, email,product_name, price, resale_price, category, details, location, mobile_number,
+        purchase_date, condition} = product
+    return (
+        <div className="card card-compact bg-base-100 shadow-xl">
+            <figure><img src={img} alt="Laptop" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">{product_name}</h2>
+                <p className='text-lg font-semibold'>Short Description: {details}</p>
+                <p className='text-lg font-semibold'>Original Price: {price} tk</p>
+                <p v>Price: {resale_price} tk</p>
+                <p>Category: {category}</p>
+                <p>Location: {location}</p>
+                <p>Mobile Number: {mobile_number}</p>
+                <p>Purchase Date: {purchase_date}</p>
+                <p>Condition: {condition}</p>
+                <p>Seller: {seller_name}</p>
+                <p>Seller Email: {email}</p>
+                <div className="card-actions justify-end">
+                <button className="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ProductCard;

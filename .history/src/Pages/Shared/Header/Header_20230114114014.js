@@ -28,7 +28,7 @@ const Header = () => {
                <li><Link to='/allbuyer'>All Buyers</Link></li>
                    
                 <li><Link to='/myorder'>My Order</Link></li>
-                <li><Link to='/allproduct'>Product</Link></li>
+                
                 
                 {
                     user?.email ?

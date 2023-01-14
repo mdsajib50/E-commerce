@@ -28,7 +28,7 @@ const Header = () => {
                <li><Link to='/allbuyer'>All Buyers</Link></li>
                    
                 <li><Link to='/myorder'>My Order</Link></li>
-                <li><Link to='/allproduct'>Product</Link></li>
+                
                 
                 {
                     user?.email ?
@@ -55,7 +55,7 @@ const Header = () => {
                 <li><Link to='/allseller'>All Sellers</Link></li>
                <li><Link to='/allbuyer'>All Buyers</Link></li>
                 <li><Link to='/blog'>Blog</Link></li>
-                <li><Link to='/allproduct'>Product</Link></li>
+                <li><Link to='/blog'>Product</Link></li>
                 {
                     user?.email ?
 

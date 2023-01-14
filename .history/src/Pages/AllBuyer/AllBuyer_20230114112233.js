@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Buyer successfully Delete');
 const AllBuyer = () => {
     const [buyers, setBuyers] = useState([])
     fetch('http://localhost:5001/users')
@@ -14,7 +12,7 @@ const AllBuyer = () => {
     .catch(err => console.error(err));
 
     const handelDelete = _id =>{
-      const proceed = window.confirm('Are you sure, Delete this Buyer');
+      const proceed = window.confirm('Are you sure, Delete this b');
       if (proceed) {
           fetch(`http://localhost:5001/user/${_id}`, {
               method: 'DELETE'
@@ -24,8 +22,8 @@ const AllBuyer = () => {
           
               if (data.deletedCount > 0) {
                  notify()
-                  const remaining = buyers.filter(buyer => buyer._id !== _id);
-                  setBuyers(remaining)
+                  const remaining = bs.filter(b => b._id !== _id);
+                  setbs(remaining)
               }
           })
           .catch(err => console.error(err))
@@ -53,12 +51,11 @@ const AllBuyer = () => {
           <td>{buyer.name}</td>
           <td>{buyer.email}</td>
           <td>{buyer.role}</td>
-          <th><button onClick={()=>handelDelete(buyer._id)} className='btn btn-warning'>Delete</button></th>
+          <th><button>Delete</button></th>
         </tr>
         })}
       </tbody>
     </table>
-    <Toaster/>
   </div>
       );
   };

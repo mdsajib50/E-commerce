@@ -53,12 +53,11 @@ const AllBuyer = () => {
           <td>{buyer.name}</td>
           <td>{buyer.email}</td>
           <td>{buyer.role}</td>
-          <th><button onClick={()=>handelDelete(buyer._id)} className='btn btn-warning'>Delete</button></th>
+          <th><button onClick={()=>}>Delete</button></th>
         </tr>
         })}
       </tbody>
     </table>
-    <Toaster/>
   </div>
       );
   };

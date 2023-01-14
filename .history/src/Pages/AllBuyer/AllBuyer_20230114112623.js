@@ -58,7 +58,6 @@ const AllBuyer = () => {
         })}
       </tbody>
     </table>
-    <Toaster/>
   </div>
       );
   };

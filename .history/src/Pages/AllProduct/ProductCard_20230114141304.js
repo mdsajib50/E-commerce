@@ -20,7 +20,7 @@ const ProductCard = ({product, setProduct}) => {
                 <p className='text-lg font-semibold'><span className='text-amber-700'>Seller Email: </span>{email}</p>
                 <div className="card-actions justify-end">
                     
-                     <label onClick={()=> setProduct(product)} htmlFor="my-modal-6" className="btn btn-secondary">Book Now</label>
+                     <label onClick={()=> } htmlFor="my-modal-6" className="btn btn-secondary">Book Now</label>
                 </div>
             </div> 
         </div>

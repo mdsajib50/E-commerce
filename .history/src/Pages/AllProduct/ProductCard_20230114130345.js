@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ProductCard = ({product, setProduct}) => {
+const ProductCard = ({product}) => {
     const {_id, img, seller_name, email,product_name, price, resale_price, category, details, location, mobile_number,
         purchase_date, condition} = product
     return (
-        <div className="card card-compact bg-white shadow-2xl shadow-sky-200 hover:bg-green-200">
+        <div className="card card-compact bg-green-100 shadow-2xl shadow-sky-200">
             <figure><img src={img} alt="Laptop" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{product_name}</h2>
@@ -19,10 +19,9 @@ const ProductCard = ({product, setProduct}) => {
                 <p className='text-lg font-semibold'><span className='text-amber-700'>Seller: </span>{seller_name}</p>
                 <p className='text-lg font-semibold'><span className='text-amber-700'>Seller Email: </span>{email}</p>
                 <div className="card-actions justify-end">
-                    
-                     <label onClick={()=> setProduct(product)} htmlFor="my-modal-6" className="btn btn-secondary">Book Now</label>
+                <button className="btn btn-primary">Book Now</button>
                 </div>
-            </div> 
+            </div>
         </div>
     );
 };

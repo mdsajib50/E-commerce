@@ -17,7 +17,7 @@ const AllProduct = () => {
                     allProduct.map(product => <ProductCard key={product._id} product={product} setProduct={setProduct}></ProductCard>)
                 }
             </div>
-            <ProductModal product={product}></ProductModal>
+            <ProductModal product></ProductModal>
         </div>
     );
 };

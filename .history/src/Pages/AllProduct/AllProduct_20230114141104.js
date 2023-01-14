@@ -14,10 +14,10 @@ const AllProduct = () => {
             <h1>All Products</h1>
             <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    allProduct.map(product => <ProductCard key={product._id} product={product} setProduct={setProduct}></ProductCard>)
+                    allProduct.map(product => <ProductCard key={product._id} product={product} setProduct></ProductCard>)
                 }
             </div>
-            <ProductModal product={product}></ProductModal>
+            <ProductModal allProduct={allProduct}></ProductModal>
         </div>
     );
 };

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Seller successfully Delete');
 const AllSeller = () => {
     const [sellers, setSellers] = useState([])
     fetch('http://localhost:5001/users')
@@ -16,7 +14,7 @@ const AllSeller = () => {
     const handelDelete = _id =>{
       const proceed = window.confirm('Are you sure, Delete this Seller');
       if (proceed) {
-          fetch(`http://localhost:5001/user/${_id}`, {
+          fetch(`https://service-seller-server-ebon.vercel.app/reviews/${_id}`, {
               method: 'DELETE'
           })
           .then(res => res.json())
@@ -25,7 +23,7 @@ const AllSeller = () => {
               if (data.deletedCount > 0) {
                  notify()
                   const remaining = sellers.filter(seller => seller._id !== _id);
-                  setSellers(remaining)
+                  setReviews(remaining)
               }
           })
           .catch(err => console.error(err))
@@ -52,12 +50,11 @@ const AllSeller = () => {
           <td>{seller.name}</td>
           <td>{seller.email}</td>
           <td>{seller.role}</td>
-          <th><button onClick={()=>handelDelete(seller._id)} className='btn btn-warning'>Delete</button></th>
+          <th><button>Delete</button></th>
         </tr>
         })}
       </tbody>
     </table>
-    <Toaster/>
   </div>
       );
   };

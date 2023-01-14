@@ -52,7 +52,7 @@ const AllSeller = () => {
           <td>{seller.name}</td>
           <td>{seller.email}</td>
           <td>{seller.role}</td>
-          <th><button onClick={()=>handelDelete(seller._id)} className='btn btn-warning'>Delete</button></th>
+          <th><button onClick={()=>handelDelete(_id)} className='btn btn-warning'>Delete</button></th>
         </tr>
         })}
       </tbody>

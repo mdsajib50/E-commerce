@@ -4,7 +4,6 @@ import Main from '../Layout/Main/Main';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import AllBuyer from '../Pages/AllBuyer/AllBuyer';
 import AllSeller from '../Pages/AllSeller/AllSeller';
-import Blog from '../Pages/Blog/Blog';
 import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
 import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home/Home';
@@ -34,8 +33,7 @@ const router = createBrowserRouter([
                 element:<Login></Login>
             },
             {
-                path: '/blog',
-                element: <Blog></Blog>
+                path
             },
             {
                 path:'/signup',

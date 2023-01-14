@@ -13,11 +13,11 @@ const Blog = () => {
                 <h1 className ='font-semibold text-lg'>How does prototypical inheritance work?</h1>
                 <p>When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype.</p>
             </div>
-            <div className='mx-auto bg-slate-200 p-6 my-3'>
+            <div className=' mx-auto bg-slate-200 p-6 my-3'>
                 <h1 className ='font-semibold text-lg'>What is a unit test? Why should we write unit tests?</h1>
                 <p>Let's start with the definition: Unit testing is a software testing method where “units”—the individual components of software—are tested. Developers write unit tests for their code to make sure that the code works correctly. This helps to detect and protect against bugs in the future.</p>
             </div>
-            <div className='mx-auto bg-slate-200 p-6 my-3'>
+            <div className=' mx-auto bg-slate-200 p-6 my-3'>
                 <h1 className ='font-semibold text-lg'>React vs. Angular vs. Vue?</h1>
                 <p>A simple difference between these three is that React is a UI library, and Vue is a progressive framework. However, Angular is a full-fledged front-end framework. As per StackOverflow Survey 2022, React is the favorite framework of 40.14% of developers, Angular with 22.96%, and Vue with 18.97% of developers.</p>
             </div>

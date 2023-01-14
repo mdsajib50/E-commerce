@@ -16,7 +16,7 @@ const AllSeller = () => {
     const handelDelete = _id =>{
       const proceed = window.confirm('Are you sure, Delete this Seller');
       if (proceed) {
-          fetch(`http://localhost:5001/user/${_id}`, {
+          fetch(`https://service-seller-server-ebon.vercel.app/reviews/${_id}`, {
               method: 'DELETE'
           })
           .then(res => res.json())
@@ -52,7 +52,7 @@ const AllSeller = () => {
           <td>{seller.name}</td>
           <td>{seller.email}</td>
           <td>{seller.role}</td>
-          <th><button onClick={()=>handelDelete(seller._id)} className='btn btn-warning'>Delete</button></th>
+          <th><button onClick={()=>handelDelete(_id)} cla>Delete</button></th>
         </tr>
         })}
       </tbody>

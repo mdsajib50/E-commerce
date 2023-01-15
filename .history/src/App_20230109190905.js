@@ -1,0 +1,13 @@
+import logo from './logo.svg';
+import './App.css';
+import { RouterProvider } from 'react-router';
+
+function App() {
+  return (
+    <div className="App">
+        <RouterProvider></RouterProvider></RouterProvider>
+    </div>
+  );
+}
+
+export default App;

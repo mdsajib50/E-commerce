@@ -1,16 +1,15 @@
 import React from 'react';
 
 const ProductCard = ({product}) => {
-    // console.log(product)
-    const {img,name} =product
+
+    const {img,product_name,details} =product
     return (
         <div className="card  bg-base-100 shadow-xl image-full">
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{name}</h2>
-                
+                <h2 className="card-title">{product_name}</h2>
+                <h3 className='text-lg'>{details}</h3>
                 <div className="card-actions my-auto justify-center">
-                <button className="btn btn-primary">Buy Now</button>
                 </div>
             </div>
 </div>

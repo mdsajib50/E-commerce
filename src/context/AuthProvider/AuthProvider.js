@@ -9,12 +9,15 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const createUser= (email, password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const login = (email, password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOut = () =>{
+        localStorage.removeItem('token')
         return signOut(auth)
     }
     useEffect(()=>{

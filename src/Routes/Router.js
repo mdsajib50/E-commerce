@@ -11,7 +11,10 @@ import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home/Home';
 import ProductCategory from '../Pages/Home/Product/ProductCategory';
 import Login from '../Pages/Login/Login';
+import MyOrder from '../Pages/MyOrder/MyOrder';
+import MyProduct from '../Pages/MyProduct/MyProduct';
 import SignUp from '../Pages/SignUp/SignUp';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -43,13 +46,16 @@ const router = createBrowserRouter([
                 element:<SignUp></SignUp>
             },
             {
-                path:'/product-category/:id',
-                loader:({params})=> fetch(`http://localhost:5001/product-category/${params.id}`),
+                path:'/myorder',
+                element:<PrivateRoute><MyOrder></MyOrder></PrivateRoute>
+            },
+            {
+                path:'/product-category',
                 element:<ProductCategory></ProductCategory>
             },
             {
                 path:'/dashboard',
-                element:<Dashboard></Dashboard>
+                element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
             {
                 path:'/allseller',
@@ -62,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path:'/allproduct',
                 element: <AllProduct></AllProduct>
+            },
+            {
+                path:'/myproduct',
+                element:<PrivateRoute><MyProduct></MyProduct></PrivateRoute>
             }
         ]
     },

@@ -26,7 +26,7 @@ const ProductModal = ({product}) => {
             location,
             mobile
         }
-        fetch('https://e-commerce-server-mdsajib50.vercel.app/booking',{
+        fetch('http://localhost:5001/booking',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'

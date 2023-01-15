@@ -18,7 +18,7 @@ const Login = () => {
     const jwtToken= (currentUser) =>{
        
         //get jwt token
-        fetch('https://e-commerce-server-mdsajib50.vercel.app/jwt',{
+        fetch('http://localhost:5001/jwt',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ const Login = () => {
      }
      const saveUser=(name, email, role)=>{
             const user ={name, email, role}
-            fetch('https://e-commerce-server-mdsajib50.vercel.app/user',{
+            fetch('http://localhost:5001/user',{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'

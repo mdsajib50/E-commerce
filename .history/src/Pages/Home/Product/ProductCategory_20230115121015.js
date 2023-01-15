@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 const ProductCategory = ({products, setProduct}) => {
     console.log(products)
     useEffect(()=>{
-        fetch(`https://e-commerce-server-mdsajib50.vercel.app/product-category?category=${products?.category}`)
+        fetch(`http://localhost:5001/product-category?category=${products?.category}`)
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(err => console.error(err))

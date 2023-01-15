@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
-
+import Spinner from 'react-bootstrap/Spinner';
 const notify = () => toast('Sign Up successfully');
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser, loading} = useContext(AuthContext)
     const navigate = useNavigate()
+   
     const handelSignUp = e =>{
         e.preventDefault()
         const form = e.target;
@@ -19,12 +20,15 @@ const SignUp = () => {
             user.displayName = name
             console.log(user)
             notify()
-           navigate('/home')
+            navigate('/home');
         })
         .catch((err) => {
             console.error(err)
         })
     }
+    if (loading) {
+        return <Spinner animation="border" />;
+    };
     return (
         <div className="w-full mt-12">
            

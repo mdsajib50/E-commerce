@@ -9,7 +9,7 @@ const Product = () => {
     const [product, setProduct] = useState({})
     const category = products.map(product => product.category)
     const categories = [...new Set(category)]
-    fetch('https://e-commerce-server-mdsajib50.vercel.app/products')
+    fetch('http://localhost:5001/products')
     .then(res => res.json())
     .then(data =>{
      
